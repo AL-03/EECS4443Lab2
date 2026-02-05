@@ -1,5 +1,6 @@
 package com.example.eecs4443lab2;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +20,76 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+        //get ids for title, image, and description
+        titleTextView=findViewById(R.id.titleTextView);
+        imageView=findViewById(R.id.imageView);
+        descriptionTextView=findViewById(R.id.descriptionTextView);
+
+        //used to access data through activities
+        Intent intent=getIntent();
+
+        //get extended data from the intent for title, image, and description
+        String title=intent.getStringExtra("title");
+        int imageResId=intent.getIntExtra("imageResId",0);
+        String description=intent.getStringExtra("description");
+
+        //Error Handling
+        //No title: If no title, display "No title"
+        if(title!=null && !title.isEmpty()){
+            titleTextView.setText(title);
+        }
+        else{
+            titleTextView.setText("No Title");
+        }
+
+        //No image: If no image, give a default "placeholder" image
+        if(imageResId!=0){
+            imageView.setImageResource(imageResId);
+        }
+        else{
+            imageView.setImageResource(R.drawable.placeholder_image);
+        }
+
+        //No description: If no description, display "No description"
+        if(description!=null && !description.isEmpty()){
+            descriptionTextView.setText(description);
+        }
+        else{
+            descriptionTextView.setText("No description");
+        }
+
         });
     }
+    //Declares a Java class "Item"
+    public class Item {
+        private String title;
+        private int imageResId;
+        private String description;
+
+
+        //Constructor for initialization of "Item"
+        public Item(String title, int imageResId, String description) {
+            this.title=title;
+            this.imageResId = imageResId;
+            this.description = description;
+        }
+
+        //Getter for title
+        public String getTitle() {
+            return title;
+        }
+
+        //Getter for imageResId
+        public int getImageResId() {
+            return imageResId;
+        }
+
+        //Getter for description
+        public String getDescription() {
+            return description;
+        }
+
+    }
+
 }
