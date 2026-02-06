@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         titleTextView=findViewById(R.id.titleTextView);
         imageView=findViewById(R.id.imageView);
         descriptionTextView=findViewById(R.id.descriptionTextView);
+        ingredientsTextView=findViewById(R.id.ingredientsTextView);
 
         //used to access data through activities
         Intent intent=getIntent();
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         String title=intent.getStringExtra("title");
         int imageResId=intent.getIntExtra("imageResId",0);
         String description=intent.getStringExtra("description");
+        String ingredients=intent.getStringExtra("ingredients");
 
         //Error Handling
         //No title: If no title, display "No title"
@@ -59,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
             descriptionTextView.setText("No description");
         }
 
+        if(ingredients!=null && !ingredients.isEmpty()){
+            ingredientsTextView.setText(ingredients);
+        }
+        else{
+            ingredientsTextView.setText("No ingredients");
+        }
+
         });
     }
     //Declares a Java class "Item"
@@ -66,13 +75,15 @@ public class MainActivity extends AppCompatActivity {
         private String title;
         private int imageResId;
         private String description;
+        private String ingredients;
 
 
         //Constructor for initialization of "Item"
-        public Item(String title, int imageResId, String description) {
-            this.title=title;
+        public Item(String title, int imageResId, String description, String ingredients) {
+            this.title = title;
             this.imageResId = imageResId;
             this.description = description;
+            this.ingredients = ingredients;
         }
 
         //Getter for title
@@ -88,6 +99,11 @@ public class MainActivity extends AppCompatActivity {
         //Getter for description
         public String getDescription() {
             return description;
+        }
+
+        //Getter for ingredients
+        public String getIngredients(){
+            return ingredients;
         }
 
     }
