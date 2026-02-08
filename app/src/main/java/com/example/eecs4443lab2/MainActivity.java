@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         //get extended data from the intent for title, image, and description
         String title=intent.getStringExtra("title");
-        int imageResId=intent.getIntExtra("imageResId",0);
+        int imageResId=intent.getIntExtra("imageReference",0);
         String description=intent.getStringExtra("description");
         String ingredients=intent.getStringExtra("ingredients");
 
@@ -73,15 +73,15 @@ public class MainActivity extends AppCompatActivity {
     //Declares a Java class "Item"
     public class Item {
         private String title;
-        private int imageResId;
+        private int imageReference;
         private String description;
         private String ingredients;
 
 
         //Constructor for initialization of "Item"
-        public Item(String title, int imageResId, String description, String ingredients) {
+        public Item(String title, int imageReference, String description, String ingredients) {
             this.title = title;
-            this.imageResId = imageResId;
+            this.imageReference = imageReference;
             this.description = description;
             this.ingredients = ingredients;
         }
@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
             return title;
         }
 
-        //Getter for imageResId
-        public int getImageResId() {
-            return imageResId;
+        //Getter for imageReference
+        public int getImageReference() {
+            return imageReference;
         }
 
         //Getter for description
@@ -104,6 +104,19 @@ public class MainActivity extends AppCompatActivity {
         //Getter for ingredients
         public String getIngredients(){
             return ingredients;
+        }
+
+        public void setTitle(){
+            this.title=title;
+        }
+        public void setImageReference(){
+            this.imageReference=imageReference;
+        }
+        public void setDescription(){
+            this.description=description;
+        }
+        public void setIngredients(){
+            this.ingredients=ingredients;
         }
 
     }
