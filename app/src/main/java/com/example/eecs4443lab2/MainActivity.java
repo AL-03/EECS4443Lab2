@@ -13,8 +13,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button itemButton = findViewById(R.id.itemButton);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,23 +23,5 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-
-
-        itemButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                detailedScreen(v, item);
-            }
-        });
-    }
-
-    public void detailedScreen(View v, Item item)
-    {
-        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-        intent.putExtra("title", item.getTitle());
-        intent.putExtra("imageResId", item.imageResId());
-        intent.putExtra("description", item.getDescription());
-        startActivity(intent);
     }
 }
