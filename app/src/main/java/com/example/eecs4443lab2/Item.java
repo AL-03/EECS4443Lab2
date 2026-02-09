@@ -2,9 +2,17 @@ package com.example.eecs4443lab2;
 
 //Declares a Java class "Item" - this is the data model
 public class Item {
+
+        // title attribute of dish Item
         private String title;
+
+        // image associated dish Item
         private int imageID;
+
+        // string representing total time to make as well as the difficulty of the dish Item
         private String description;
+
+        // string representing the ingredient list of the dish Item
         private String ingredients;
 
 
@@ -16,7 +24,7 @@ public class Item {
             this.ingredients = ingredients;
         }
 
-        //Getter for title that will be displayed in a TextView object
+        //Getter for title
         public String getTitle() {
             return title;
         }
@@ -26,12 +34,12 @@ public class Item {
             return imageID;
         }
 
-        //Getter for description that will be displayed in a TextView object
+        //Getter for description
         public String getDescription() {
             return description;
         }
 
-        //Getter for ingredients that will be displayed in a TextView object
+        //Getter for ingredients
         public String getIngredients(){
             return ingredients;
         }

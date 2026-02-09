@@ -14,23 +14,18 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    // initializing a recyclerView object
+    // Declaring a RecyclerView variable
     RecyclerView recyclerView;
+
+    // Declaring a RecyclerViewAdapter variable
     RecyclerViewAdapter adapter;
 
+    // Declaring an arrayList of Item objects, which will have 15 hardcoded Item objects added to it
     ArrayList<Item> arrayListItems = new ArrayList<>();
-    /*
-    ArrayList<String> arrayListItemTitle = new ArrayList<>();
-    ArrayList<String> arrayListItemDescription = new ArrayList<>();
-
-    // might not be used
-    ArrayList<Integer> arrayListItemImage = new ArrayList<Integer>();
-
-    */
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Instantiates the content view to refer to the main activity, which will contain the RecyclerView object
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
@@ -43,14 +38,25 @@ public class MainActivity extends AppCompatActivity {
         // locating the recyclerView object by ID from the activity_main.xml
         recyclerView = findViewById(R.id.recyclerView);
 
+        // constructing a new RecyclerViewAdapter object with the arrayListItems;
         adapter = new RecyclerViewAdapter(arrayListItems);
-        //adapter = new RecyclerViewAdapter(arrayListItemTitle, arrayListItemDescription, arrayListItemImage);
+
+        // Creating a LinearLayoutManager for the RecyclerView that knows to handle the Item views in a vertical manner, and is set to show that the laid out Items are not in a reverse order
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+        // Setting the RecyclerView layout manager and adapter to be those established above
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
 
-        // hard code items then add to list
+        /*
+        Hard coding 15 new Item objects that correspond to different dishes, and adding them in alphabetical order to the item arrayList.
+        Each Item object has the following elements:
+            The dish title,
+            The associated dish image,
+            The total time and difficulty per dish (this is the description shown in the RecyclerView AND in the Detailed Activity)
+            The associated dish ingredients (a longer string for the Detailed Activity to display only)
+        */
         arrayListItems.add(new Item("Baked Feta Pasta", R.drawable.baked_feta_pasta, "45 Mins\nEasy Difficulty","1) 2 pints (20 oz) cherry tomatoes\n2) 1/2 cup extra-virgin olive oil\n3) One 8-oz block feta cheese, drained\n4) 10 oz mezze rigatoni\n5) 1 clove garlic, finely grated\n6) 1/4 cup fresh basil leaves, thinly sliced\n7) Kosher salt, ground black pepper"));
         arrayListItems.add(new Item("Baked Salmon" , R.drawable.baked_salmon, "25 Mins\nEasy Difficulty", "1) 2 Tbsp. light brown sugar\n2) 1/2 tsp. paprika\n3) 1/2 tsp. garlic powder\n4) 1/4 tsp. cayenne pepper\n5) Kosher salt, ground black pepper\n6) 1/4 cup panko breadcrumbs\n7) 1/2 cup parsley leaves, chopped\n8) 2 Tbsp. unsalted butter, melted\n9) 1 1/2 lbs skin-on salmon fillet\n10) 1 Tbsp. Dijon"));
         arrayListItems.add(new Item("Butternut Squash Stuffed Shells" , R.drawable.butternut_squash_stuffed_shells, "1 Hr 30 Mins\nEasy Difficulty", "1) 10 oz diced butternut squash\n2) 1 small shallot, halved\n3) 1 clove garlic, unpeeled\n4) 2 Tbsp. olive oil\n5) 1/4 tsp. fresh thyme leaves, finely chopped\n6) Kosher salt, ground black pepper\n7) 30 jumbo pasta shells\n8) 1/4 cup vegetable broth\n9) 20 oz dried, chopped spinach\n10) 1 lb cream cheese, room temperature\n11) 2 cups whole-milk ricotta\n12) 2 cups grated Parmesan\n13) 2 cups heavy cream\n14) 1 cup grated mozzarella\n15) 2 Tbsp. unsalted butter"));
@@ -68,61 +74,7 @@ public class MainActivity extends AppCompatActivity {
         arrayListItems.add(new Item("Tortilla Breakfast Wrap" , R.drawable.tortilla_breakfast_wrap, "10 Mins\nEasy Difficulty", "1) 2 large eggs\n2) Kosher salt, ground black pepper\n3) 1 Tbsp. unsalted butter\n4) One 8-inch whole-wheat tortilla\n5) 2 slices American cheese\n6) 2 thin slices deli Black Forest ham"));
 
 
-
-
-
-
-        // hard coded item titles
-        /*
-        arrayListItemTitle.add("Baked Feta Pasta");                     //1
-        arrayListItemTitle.add("Baked Salmon");                         //2
-        arrayListItemTitle.add("Butternut Squash Stuffed Shells");      //3
-        arrayListItemTitle.add("Cherry Almond Smoothie");               //4
-        arrayListItemTitle.add("Chicken Adobo");                        //5
-        arrayListItemTitle.add("Chicken Katsu");                        //6
-        arrayListItemTitle.add("Chicken Pot Pie");                      //7
-        arrayListItemTitle.add("Cold Brew Coffee");                     //8
-        arrayListItemTitle.add("Fetuccine Alfredo");                    //9
-        arrayListItemTitle.add("French Onion Dip Cups");                //10
-        arrayListItemTitle.add("Nai Wong Bao");                         //11
-        arrayListItemTitle.add("Pancakes");                             //12
-        arrayListItemTitle.add("Papeta Par Eda");                       //13
-        arrayListItemTitle.add("Party Meatballs");                      //14
-        arrayListItemTitle.add("Tortilla Breakfast Wrap");              //15
-
-
-        arrayListItemDescription.add("45 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("25 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("1 Hr 30 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("5 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("2 Hrs 50 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("20 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("43 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("18 Hrs 5 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("25 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("1 Hr\nEasy Difficulty");
-        arrayListItemDescription.add("5 Hrs\nIntermediate Difficulty");
-        arrayListItemDescription.add("22 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("45 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("45 Mins\nEasy Difficulty");
-        arrayListItemDescription.add("10 Mins\nEasy Difficulty");
-
-        arrayListItemImage.add(R.drawable.baked_feta_pasta);
-        arrayListItemImage.add(R.drawable.baked_salmon);
-        arrayListItemImage.add(R.drawable.butternut_squash_stuffed_shells);
-        arrayListItemImage.add(R.drawable.cherry_almond_smoothie);
-        arrayListItemImage.add(R.drawable.chicken_adobo);
-        arrayListItemImage.add(R.drawable.chicken_katsu);
-        arrayListItemImage.add(R.drawable.chicken_pot_pie);
-        arrayListItemImage.add(R.drawable.cold_brew_coffee);
-        arrayListItemImage.add(R.drawable.fetuccine_alfredo);
-        arrayListItemImage.add(R.drawable.french_onion_dip_cups);
-        arrayListItemImage.add(R.drawable.nai_wong_bao);
-        arrayListItemImage.add(R.drawable.pancakes);
-        arrayListItemImage.add(R.drawable.papeta_par_eda);
-        arrayListItemImage.add(R.drawable.party_meatballs);
-        arrayListItemImage.add(R.drawable.tortilla_breakfast_wrap);
-        */
+        // Notifying the adapter of the change to the Item arrayList
         adapter.notifyDataSetChanged();
 
     }
