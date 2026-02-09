@@ -13,17 +13,27 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
+    /*
     ArrayList<String> aLItemTitle = new ArrayList<>();
     ArrayList<String> aLItemDescription = new ArrayList<>();
 
     // might not be used
     ArrayList<Integer> aLItemImage = new ArrayList<>();
+    */
+    ArrayList<Item> arrayListItems = new ArrayList<>();
 
+    /*
     public RecyclerViewAdapter(ArrayList<String> arrayListItemTitle, ArrayList<String> arrayListItemDescription, ArrayList<Integer> arrayListItemImage)
     {
         this.aLItemTitle = arrayListItemTitle;
         this.aLItemDescription = arrayListItemDescription;
         this.aLItemImage = arrayListItemImage;
+    }
+
+     */
+
+    public RecyclerViewAdapter(ArrayList<Item> arrayListItems) {
+        this.arrayListItems = arrayListItems;
     }
 
     @NonNull
@@ -35,19 +45,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        /*
         holder.itemTitle.setText(aLItemTitle.get(position));
         holder.itemDescription.setText(aLItemDescription.get(position));
         holder.itemImage.setImageResource(aLItemImage.get(position));
+        */
+        holder.itemTitle.setText(arrayListItems.get(position).getTitle());
+        holder.itemImage.setImageResource(arrayListItems.get(position).getImageID());
+        holder.itemDescription.setText(arrayListItems.get(position).getDescription());
+        holder.itemIngredients.setText(arrayListItems.get(position).getIngredients());
     }
 
     @Override
     public int getItemCount() {
-        return aLItemTitle.size();
+        return arrayListItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemTitle, itemDescription;
+        TextView itemTitle, itemDescription, itemIngredients;
         ImageView itemImage;
 
         public ViewHolder(@NonNull View itemView) {
@@ -56,6 +72,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             itemTitle = itemView.findViewById(R.id.itemTitle);
             itemDescription = itemView.findViewById(R.id.itemDescription);
             itemImage = itemView.findViewById(R.id.itemImage);
+
+            // goes with detailed activity
+            //itemIngredients = itemView.findViewById(R.id.itemIngredients);
 
         }
     }
