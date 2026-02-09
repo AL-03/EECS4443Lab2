@@ -34,8 +34,8 @@
   * Tasks 1, 3
  
 
-## Resources
-# The following list cites the origins of each of the 15 items and their derived title, image, description, and ingredients attributes
+# Resources
+## The following list cites the origins of each of the 15 items and their derived title, image, description, and ingredients attributes
 1. Baked Feta Pasta (https://www.foodnetwork.com/recipes/food-network-kitchen/baked-feta-pasta-9867689)
 2. Baked Salmon (https://www.foodnetwork.com/recipes/food-network-kitchen/the-best-baked-salmon-1-8081733)
 3. Butternut Squash Stuffed Shells (https://www.foodnetwork.com/recipes/food-network-kitchen/butternut-squash-stuffed-shells-7177275)
