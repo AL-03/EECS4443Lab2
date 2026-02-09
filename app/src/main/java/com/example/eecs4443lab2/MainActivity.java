@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         //get extended data from the intent for title, image, and description
         String title=intent.getStringExtra("title");
-        int imageResId=intent.getIntExtra("imageReference",0);
+        int imageReference=intent.getIntExtra("imageReference",0);
         String description=intent.getStringExtra("description");
         String ingredients=intent.getStringExtra("ingredients");
 
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //No image: If no image, give a default "placeholder" image
-        if(imageResId!=0){
-            imageView.setImageResource(imageResId);
+        if(imageReference!=0){
+            imageView.setImageResource(imageReference);
         }
         else{
             imageView.setImageResource(R.drawable.placeholder_image);
