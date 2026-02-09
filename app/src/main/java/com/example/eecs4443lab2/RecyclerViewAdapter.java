@@ -1,5 +1,6 @@
 package com.example.eecs4443lab2;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +60,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
         holder.itemImage.setImageResource(arrayListItems.get(position).getImageID());
+      
+        //Checks when the user clicks on an item and changes the layout using the DetailActivity class.
+        holder.itemView.setOnClickListener(v -> {
+
+            Intent intent = new Intent(v.getContext(), DetailActivity.class);
+
+            intent.putExtra("title", arrayListItems.get(position).getTitle());
+            intent.putExtra("description", arrayListItems.get(position).getDescription());
+            intent.putExtra("imageResId", arrayListItems.get(position).getImageID());
+            intent.putExtra("ingredients", arrayListItems.get(position).getIngredients());
+
+            v.getContext().startActivity(intent);
+        });
     }
 
     // returns the size of the Item arrayList, which should be 15 based on the hardcoded Item additions established in MainActivity.java

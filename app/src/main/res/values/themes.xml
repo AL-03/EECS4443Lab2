@@ -7,6 +7,14 @@
 
     <style name="Theme.EECS4443Lab2" parent="Base.Theme.EECS4443Lab2" />
 
+    <style name="Theme.EECS4443Lab2.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.EECS4443Lab2.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.EECS4443Lab2.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <!--
     This style allows for the 2 right corners of an image to be rounded by 15dp, whereas
         the left corners are kept at 90 degrees
