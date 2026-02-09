@@ -16,11 +16,6 @@
             android:exported="false"
             android:theme="@style/Theme.EECS4443Lab2" />
         <activity
-            android:name=".ScrollingActivity"
-            android:exported="false"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.EECS4443Lab2.NoActionBar" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
