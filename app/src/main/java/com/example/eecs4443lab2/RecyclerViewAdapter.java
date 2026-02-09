@@ -62,8 +62,9 @@ import java.util.ArrayList;
                 Intent intent = new Intent(v.getContext(), DetailActivity.class);
 
                 intent.putExtra("title", arrayListItems.get(position).getTitle());
-                intent.putExtra("description", arrayListItems.get(position).getIngredients());
+                intent.putExtra("description", arrayListItems.get(position).getDescription());
                 intent.putExtra("imageResId", arrayListItems.get(position).getImageID());
+                intent.putExtra("ingredients", arrayListItems.get(position).getIngredients());
 
                 v.getContext().startActivity(intent);
           });

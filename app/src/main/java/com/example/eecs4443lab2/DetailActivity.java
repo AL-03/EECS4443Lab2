@@ -26,10 +26,12 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         TextView descriptionBox = findViewById(R.id.descriptionBox);
+        TextView ingredientBox = findViewById(R.id.ingredientBox);
         TextView titleBox = findViewById(R.id.titleBox);
         ImageView thumbnail = findViewById(R.id.thumbnail);
 
         descriptionBox.setText(intent.getStringExtra("description"));
+        ingredientBox.setText(intent.getStringExtra("ingredients"));
         titleBox.setText(intent.getStringExtra("title"));
         thumbnail.setImageResource(intent.getIntExtra("imageResId", 0));
 
