@@ -37,12 +37,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     The data attributes of the currently seen Item (title, image and description) are bound to the UI elements laid out in the item_layout.xml file.
     The correct item is referenced by its position within the arrayList of Items, which is the dataset.
     Each attribute is fetched with the getters established in the Item data model class.
+    Error handling ensures null/empty texts are handled.
     */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.itemTitle.setText(arrayListItems.get(position).getTitle());
+        String title = arrayListItems.get(position).getTitle();
+        String desc = arrayListItems.get(position).getDescription();
+
+        if (title!=null && !title.isEmpty()) {
+            holder.itemTitle.setText(title);
+        }
+        else {
+            holder.itemTitle.setText("No title");
+        }
+
+        if (desc!=null && !desc.isEmpty()) {
+            holder.itemDescription.setText(desc);
+        }
+        else {
+            holder.itemDescription.setText("No description");
+        }
+
         holder.itemImage.setImageResource(arrayListItems.get(position).getImageID());
-        holder.itemDescription.setText(arrayListItems.get(position).getDescription());
     }
 
     // returns the size of the Item arrayList, which should be 15 based on the hardcoded Item additions established in MainActivity.java
