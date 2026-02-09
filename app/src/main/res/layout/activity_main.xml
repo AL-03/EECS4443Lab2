@@ -39,7 +39,7 @@ A constraint layout is used for the screen to allow objects within to be
     <!--
     The RecyclerView object with id=recyclerView
     The layout width is sized to match the screen size, while the height is set to 0 to ensure
-        the RecyclerView height adapt to screen size when screen orientation changes
+        the RecyclerView height adapts to screen size when screen orientation changes
     The layout is constrained within the parent layout and is biased towards the
         vertical such that the RecyclerView touches the bottom of the screen
     The listed items within the RecyclerView are taken from the item_layout.xml file
