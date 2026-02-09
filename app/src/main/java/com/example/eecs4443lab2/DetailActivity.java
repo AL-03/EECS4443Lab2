@@ -24,12 +24,14 @@ public class DetailActivity extends AppCompatActivity {
             return insets;
         });
 
+        //Gets the elements from activity_detail using their id's.
         Intent intent = getIntent();
         TextView descriptionBox = findViewById(R.id.descriptionBox);
         TextView ingredientBox = findViewById(R.id.ingredientBox);
         TextView titleBox = findViewById(R.id.titleBox);
         ImageView thumbnail = findViewById(R.id.thumbnail);
 
+        //Sets each element to the provided values given by the intent.
         descriptionBox.setText(intent.getStringExtra("description"));
         ingredientBox.setText(intent.getStringExtra("ingredients"));
         titleBox.setText(intent.getStringExtra("title"));
