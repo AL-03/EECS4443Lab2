@@ -18,13 +18,14 @@
 * Sheraz Ahmad
   * Task 4, 5
 
-## Final Contributions - TBD
+## Final Contributions
 * Alexa Lupo
   * Task 2, 7
   * Assistance with merging of tasks 2 and 7 with tasks 1 and 3
 * Alice Luong
   * Task 6
   * Reorienting UI established in tasks 1, 3, and 5
+  * Helped merge everyone's contributions into main
 * Sheraz Ahmad
   * Task 4, 5
   * Assistance with Listeners for each Item to open their detailedActivity
@@ -56,4 +57,5 @@
 https://www.figma.com/proto/tNL9GPWUxWhB4Grjm3NACB/EECS4443-Labs?node-id=57-59&p=f&t=GXFccEujrcsrpFos-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A58
 
 
-# Limitations - TBD
+# Limitations
+N/A
