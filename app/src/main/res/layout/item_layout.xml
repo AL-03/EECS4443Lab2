@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Each Item is represented by a CardView. Each card is 150dp in height and has a 15dp margin from the
+    edges of the screen.
+The background color of each Item is white, and the corners are rounded by 15dp for a more modern look
+-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_margin="15dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="15dp">
+
+    <!--
+    All UI elements of each Item CardView are placed within a ConstraintLayout to avoid any
+        overlap between the TextViews or between TextView to the ImageView
+    The ConstraintLayout is set to match the size of the CardView in height and width
+    -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--
+        The itemTitle TextView represents the title of each dish
+        This TextView can be up to 125dp wide, and as high as it needs to be based on the
+            name of the dish (but within reason given its constraints)
+        The text begins 15dp to the right of the left edge of the Item card, as well as 15dp from the top edge
+        The text ends 62dp from the image of the dish, and 51dp from the bottom edge of the Item card
+        The text of the title is a bold sans-serif of size 18dp and a dark grey color found in the android defaults
+        The text is large in appearance as opposed to a body size
+        -->
+        <TextView
+            android:id="@+id/itemTitle"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="62dp"
+            android:layout_marginBottom="51dp"
+            android:fontFamily="sans-serif"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemImage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.016" />
+
+        <!--
+        The itemDescription TextView represents the description of each dish
+        This TextView can be up to 125dp wide, and as high as it needs to be based on the
+            name of the dish (but within reason given its constraints)
+        The text begins 15dp to the right of the left edge of the Item card, as well as 8dp from the top edge
+            (however, there is a large vertical bias that ensures the text is towards the bottom of the CardView)
+        The text ends 62dp from the image of the dish
+        The text of the description is a standard black sans-serif of size 12dp
+        The text is of appearance Body1 and is aligned to start from the left (not centered in the TextView)
+        The spacing between each line (which is explicitly set with "\n" in the String attribute) is set at 3sp
+        -->
+        <TextView
+            android:id="@+id/itemDescription"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="62dp"
+            android:fontFamily="sans-serif"
+            android:lineSpacingExtra="3sp"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/itemImage"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <!--
+        The ShapeableImageView is established for the image of each dish Item, with id=itemImage
+        The width of this view is 180dp, and the height matches the CardView
+        The gravity of the layout is set to end to ensure the image is stuck to the right edge of the CardView
+        The marginStart keeps the image 62dp from either TextView object
+        The scaleType of the image in the ImageView is set to fit its width and height entirely with fitXY
+        The shapeAppearanceOverlay is set with a customRoundedView that was created in the themes.xml file
+            This roundedView means the corners of the top right and bottom right of the image are rounded
+            with the same 15dp as the CardView corner radius, while the left corners are kept at 90 degrees.
+        -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/itemImage"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_marginStart="62dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/customRoundedImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
