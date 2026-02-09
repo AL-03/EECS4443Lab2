@@ -56,7 +56,7 @@ import java.util.ArrayList;
             holder.itemDescription.setText(arrayListItems.get(position).getDescription());
             holder.itemIngredients.setText(arrayListItems.get(position).getIngredients());
 
-
+            //Checks when the user clicks on an item and changes the layout using the DetailActivity class.
             holder.itemView.setOnClickListener(v -> {
 
                 Intent intent = new Intent(v.getContext(), DetailActivity.class);
