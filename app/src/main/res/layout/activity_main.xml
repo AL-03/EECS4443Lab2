@@ -1,19 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+A constraint layout is used for the screen to allow objects within to be
+    sized by comparison. The background color is a nice mint green.
+-->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D4F0ED"
     tools:context=".MainActivity">
 
+    <!--
+    The TextView object with the title of "2025 Recipe Overview," and id=pageTitle
+    The font is set to size 34sp sans-serif type text with a bold style and black text color
+    The text is aligned in the center of the TextView object and has a Large appearance (as opposed to body size text)
+    The text is constrained to be centered between the RecyclerView and the top of the screens, as well as the left and right side of the screens
+    The text is padded to allow for some space and not have the text on the edges of the screen
+    -->
     <TextView
+        android:id="@+id/pageTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:fontFamily="sans-serif"
+        android:padding="10dp"
+        android:text="@string/_2025_recipe_overview"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--
+    The RecyclerView object with id=recyclerView
+    The layout width is sized to match the screen size, while the height is fixed to ensure
+        the RecyclerView is limited to only show ~3 - 4 Item objects at a time
+    The layout is constrained within the parent layout and is biased towards the
+        vertical such that the RecyclerView touches the bottom of the screen
+    The listed items within the RecyclerView are taken from the item_layout.xml file
+    -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/item_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
