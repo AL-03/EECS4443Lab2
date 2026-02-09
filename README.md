@@ -6,8 +6,8 @@
 * Maya Shamir
 * Sheraz Ahmad
   
-## Division of work among members: 
-# Planned Division BEFORE Starting Project
+# Division of work among members: 
+## Planned Division BEFORE Starting Project
 * Alexa Lupo
   * Task 2, 7
 * Alice Luong
@@ -18,7 +18,7 @@
 * Sheraz Ahmad
   * Task 4, 5
 
-# Final Contributions - TBD
+## Final Contributions - TBD
 * Alexa Lupo
   * Task 2, 7
   * Assistance with merging of tasks 2 and 7 with tasks 1 and 3
@@ -52,7 +52,7 @@
 14. Party Meatballs (https://www.foodnetwork.com/recipes/party-meatballs-14138089)
 15. Tortilla Breakfast Wrap (https://www.foodnetwork.com/recipes/food-network-kitchen/tortilla-breakfast-wrap-9349390)
 
-# Figma Prototype - RecyclerView
+## Figma Prototype - RecyclerView
 https://www.figma.com/proto/tNL9GPWUxWhB4Grjm3NACB/EECS4443-Labs?node-id=57-59&p=f&t=GXFccEujrcsrpFos-1&scaling=min-zoom&content-scaling=fixed&page-id=57%3A58
 
 
